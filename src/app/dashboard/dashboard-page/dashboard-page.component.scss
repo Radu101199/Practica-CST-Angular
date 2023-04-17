@@ -1,0 +1,116 @@
+.container {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+    
+    button {
+        background-color: #8b0000;
+        border-color: #8b0000;
+        margin-right: 10px;
+  
+        &:hover {
+          background-color: #a52a2a;
+          border-color: #a52a2a;
+        }
+    }
+    
+    h1 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+  
+    .logout {
+      margin-top: -10px;
+      margin-right: -10px;
+      float: right;
+    }
+  
+    .searchBar {
+      display: flex;
+      margin-top: 20px;
+      
+      input {
+        flex: 1;
+        margin-right: 10px;
+        border: 1px solid #8b0000;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #8b0000;
+        &:hover {
+            box-shadow: 0 0 10px #8b0000;
+          }
+      }
+  
+      .cancelSearch {
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+  
+    .sort {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      
+      .add {
+        display: flex;
+        align-items: center;
+       
+      }
+  
+      .sortbtn {
+        margin-left: 5px;
+        color: #1e1e1e;
+      }
+  
+      .arrow {
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+  
+    .cars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+  
+      app-car-card {
+        background-color: #333;
+        border: 1px solid #8b0000;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #8b0000;
+        margin: 10px;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 0 10px #8b0000;
+        }
+  
+        .car-details {
+          margin-top: 10px;
+          p {
+            margin-bottom: 0;
+          }
+  
+          strong {
+            margin-right: 10px;
+          }
+        }
+  
+        img {
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .addBtn{
+        display: flex;
+        justify-content: center;
+    }
+  }
+  

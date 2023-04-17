@@ -1,0 +1,117 @@
+<button
+  nz-button
+  class="addbtn my-button-class"
+  [nzType]="'primary'"
+  (click)="showModal()"
+>
+  Add car
+</button>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Add a car"
+  (nzOnCancel)="modalCancel()"
+  (nzOnOk)="addCar()"
+>
+  <ng-container *nzModalContent class="my-modal-class">
+    <form nz-form [formGroup]="addCarForm" class="my-form-class">
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Brand is required!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Brand"
+            formControlName="brand"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Model is required!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Model"
+            formControlName="model"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Year must be a number!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Year"
+            formControlName="year"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Color is required!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Color"
+            formControlName="color"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Horsepower must be a number!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Horsepower"
+            formControlName="horsepower"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Mileage must be a number!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Mileage"
+            formControlName="mileage"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="my-form-item-class">
+        <nz-form-control
+          nzErrorTip="Description is required!"
+          class="my-form-control-class"
+        >
+          <input
+            nz-input
+            placeholder="Description"
+            formControlName="description"
+            class="my-input-class"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>

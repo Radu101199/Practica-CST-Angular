@@ -1,0 +1,15 @@
+<nz-card style="width: 300px" [nzTitle]="car.title" [nzExtra]="extraTemplate">
+    <div class="car-details">
+      <p><strong>Brand:</strong> {{ car.brand }}</p>
+      <p><strong>Model:</strong> {{ car.model }}</p>
+      <p><strong>Year:</strong> {{ car.year }}</p>
+      <p><strong>Color:</strong> {{ car.color }}</p>
+      <p><strong>Horsepower:</strong> {{ car.horsepower }}</p>
+      <p><strong>Mileage:</strong> {{ car.mileage }}</p>
+    </div>
+  </nz-card>
+  <ng-template #extraTemplate>
+    <div class="ant-card-extra">
+       <button nz-button nzType="default" (click)="navigateToCarPage()">More</button>
+    </div>
+  </ng-template>

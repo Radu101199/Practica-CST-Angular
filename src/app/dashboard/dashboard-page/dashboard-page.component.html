@@ -1,0 +1,66 @@
+<div class="container">
+  <button class="logout" nz-button nzType="primary" (click)="logout()">
+    LogOut!
+  </button>
+  <h1>Cars</h1>
+  <div class="searchBar">
+    <input
+      nz-input
+      placeholder="Search by title, description, brand, year, model..."
+      [(ngModel)]="searched"
+    />
+    <button nz-button nzType="primary" (click)="search()">Search</button>
+    <div *ngIf="searched != ''">
+      <span
+        class="cancelSearch"
+        nz-icon
+        nzType="close"
+        (click)="removeSearch()"
+      ></span>
+    </div>
+  </div>
+  <div class="sort">
+    <div class="add">
+      Sort by:
+      <button class="sortbtn" nz-button nz-dropdown [nzDropdownMenu]="menu">
+        {{ selectedItem }}<span nz-icon nzType="down"></span>
+      </button>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item (click)="selectedItem = 'brand'; sort(true)">
+            brand
+          </li>
+          <li nz-menu-item (click)="selectedItem = 'model'; sort(true)">
+            model
+          </li>
+          <li nz-menu-item (click)="selectedItem = 'year'; sort(true)">year</li>
+          <li nz-menu-item (click)="selectedItem = 'color'; sort(true)">
+            color
+          </li>
+          <li nz-menu-item (click)="selectedItem = 'HP'; sort(true)">
+            HorsePower
+          </li>
+          <li nz-menu-item (click)="selectedItem = 'mileage'; sort(true)">
+            mileage
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+      <span
+        class="arrow"
+        nz-icon
+        [nzType]="iconType"
+        (click)="sort(true)"
+      ></span>
+    </div>
+  </div>
+  <div class="cars">
+    <app-car-card
+      *ngFor="let car of carList"
+      [car]="car"
+      (clickedMore)="navigateToCarPage(car)"
+    ></app-car-card>
+  </div>
+  <div class="addBtn">
+    <app-add-car (add)="addNewCar($event)"></app-add-car>
+  </div>
+</div>

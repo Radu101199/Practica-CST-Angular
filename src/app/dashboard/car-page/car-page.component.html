@@ -1,0 +1,13 @@
+<body>
+<div class="form">
+    <input nz-input placeholder="Brand" [(ngModel)]="carBrand" />
+    <input nz-input placeholder="Model" [(ngModel)]="carModel" />
+    <input nz-input placeholder="Year" [(ngModel)]="carYear" />
+    <input nz-input placeholder="Color" [(ngModel)]="carColor" />
+    <input nz-input placeholder="HorsePower" [(ngModel)]="carHP" />
+    <input nz-input placeholder="Mileage" [(ngModel)]="carMileage" />
+    <input nz-input placeholder="Description" [(ngModel)]="carDescription" />
+    <button nz-button nzType="primary" (click)="editCar()">Save</button>
+    <button nz-button nzType="primary"  class="delete-btn" nzDanger (click)="deleteCar()">Delete</button>
+  </div>  
+</body>

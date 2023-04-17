@@ -1,0 +1,11 @@
+.ant-btn-primary {
+    background-color: black;
+    color: #ff0000;
+    border-color: #ff0000;
+  
+    &:hover {
+      background-color: #ff0000;
+      color: black;
+      border-color: #ff0000;
+    }
+  }

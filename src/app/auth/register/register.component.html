@@ -1,0 +1,82 @@
+<body>
+  <div class="container">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="The input is not a valid E-mail!">
+          <input
+            nz-input
+            type="email"
+            formControlName="email"
+            id="email"
+            placeholder="Email"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <input
+            nz-input
+            type="password"
+            formControlName="password"
+            id="password"
+            placeholder="Password"
+            (ngModelChange)="updateConfirmValidator()"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="errorTpl">
+          <input
+            nz-input
+            type="password"
+            formControlName="checkPassword"
+            id="checkPassword"
+            placeholder="Confirm Password"
+          />
+          <ng-template #errorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')"
+              >Please confirm your password!</ng-container
+            >
+            <ng-container *ngIf="control.hasError('confirm')"
+              >Two passwords that you enter are inconsistent!</ng-container
+            >
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your first name!">
+          <input
+            nz-input
+            type="text"
+            formControlName="fname"
+            id="fname"
+            placeholder="First Name"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your last name!">
+          <input
+            nz-input
+            type="text"
+            formControlName="lname"
+            id="lname"
+            placeholder="Last Name"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary">Register</button>
+          Or
+          <a routerLink="/login">Get Back!</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</body>

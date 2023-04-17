@@ -1,0 +1,41 @@
+<body>
+  <div class="container">
+    <form
+      nz-form
+      [formGroup]="validateForm"
+      class="login-form"
+      (ngSubmit)="submitForm()"
+    >
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your email!">
+          <input
+            type="text"
+            nz-input
+            formControlName="userName"
+            placeholder="Email"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <input
+            type="password"
+            nz-input
+            formControlName="password"
+            placeholder="Password"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <label nz-checkbox formControlName="remember">
+          <span>Remember me</span>
+        </label>
+      </nz-form-item>
+      <button nz-button class="login-form-button" [nzType]="'primary'">
+        Log in
+      </button>
+      Or
+      <a routerLink="/register">register now!</a>
+    </form>
+  </div>
+</body>
